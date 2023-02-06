@@ -4,7 +4,7 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseU
 class UserAccountManager(BaseUserManager):
     def create_user(self, email, name, password=None):
         if not email:
-            raise ValueError('Should be a valid email address')
+            raise ValueError('Debes introducir una direccion de correo valida')
         email = self.normalize_email(email)
         user = self.model(email=email, name=name)
         
@@ -33,7 +33,7 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
     
     objects = UserAccountManager()
 
-# Por defecto, Django usa un username para las autenticaciones. Lo sobreescribimos
+    # Por defecto, Django usa un username para las autenticaciones. Lo sobreescribimos
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['name'] # email ya viene como campo requerido por defecto
     def get_full_name(self):

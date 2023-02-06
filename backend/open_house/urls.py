@@ -13,10 +13,9 @@ urlpatterns = [
     # recomended paths from jwt documentation
     path('api/accounts/', include('accounts.urls')),
     path('admin/', admin.site.urls),
-]
-static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # ^ with alt+94
 # To catch all the other routes that aren't in here
 # All those routes on our frontend are going to be catch here
-urlpatterns += [re_path(r'^.*'), TemplateView.as_view(template_name='index.html')]
+urlpatterns += [re_path(r'^.*', TemplateView.as_view(template_name='index.html'))]
