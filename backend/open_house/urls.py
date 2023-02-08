@@ -12,6 +12,7 @@ urlpatterns = [
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     # recomended paths from jwt documentation
     path('api/accounts/', include('accounts.urls')),
+    path('api/realtors/', include('realtors.urls')),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
