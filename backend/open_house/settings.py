@@ -87,8 +87,8 @@ WSGI_APPLICATION = 'open_house.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'open_house',
-        'USER': 'postgres',
+        'NAME': os.environ['DB_DATABASE_NAME'],
+        'USER': os.environ['DB_USERNAME'],
         'PASSWORD': os.environ['DB_PASSWORD'],
         'HOST': 'localhost'
     }
@@ -97,7 +97,7 @@ DATABASES = {
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'donraviols.practise@gmail.com'
+EMAIL_HOST_USER = os.environ['GOOGLE_USER']
 EMAIL_HOST_PASSWORD = os.environ['GOOGLE_PASSWORD']
 EMAIL_USE_TLS = True
 
