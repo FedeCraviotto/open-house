@@ -1,9 +1,11 @@
 import React from "react";
+import Layout from './components/Navbar';
+
 function App() {
   return (
-    <div className="app">
-      Nueva App
-    </div>
+    <Layout>
+      
+    </Layout>
   );
 }
 
