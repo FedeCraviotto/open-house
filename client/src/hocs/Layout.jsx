@@ -1,11 +1,11 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 
-function Layout({children}){
+function Layout(props){
     return(
         <div className="layout">
             <Navbar />
-            {children}
+            {props.children}
         </div>
     )
 }
