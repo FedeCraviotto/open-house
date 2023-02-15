@@ -1,0 +1,36 @@
+// @mixin nombre { logica } 
+
+// Cuando flotamos por ejemplo 3 elementos en una row, como son elementos flotantes el height del elemento que los contiene va a ser removido. Esto va a hacer que el height se mantenga
+@mixin clearfix {
+    &::after {
+        content:"";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin absCenter {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    transform: translate(-50%, -50%); // Porque sino la que te queda centrada en el medio exacto es la esquina superior izquierda del elemento. El medio esta a mitad de su ancho, y a mitad de su largo.
+}
+
+@mixin respond($breakpoint){
+    @if $breakpoint == mobile {
+        // hasta 600
+        @media only screen and (max-width:37.5em ){@content}; 
+    }
+    @if $breakpoint == tablet-port {
+        // hasta 900
+        @media only screen and (max-width: 56.25em){@content};
+    }
+    @if $breakpoint == tablet-land {
+        // hasta 1200px 
+        @media only screen and (max-width: 75em){@content};
+    }
+    @if $breakpoint == desktop {
+        // desde 1800px
+        @media only screen and (min-width: 112.5em){@content};
+    }
+}

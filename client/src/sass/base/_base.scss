@@ -1,0 +1,32 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; // convierte 1rem a 10px;
+    @include respond(tablet-land){
+        font-size: 56.25%; // 9
+    }
+    @include respond(tablet-port){
+        font-size: 50%; // 8
+    }
+    @include respond(mobile){
+        font-size: 80%; // 12
+    }
+}
+
+body {
+    box-sizing: border-box;
+    font-family: bebas-neue, sans-serif;
+    @include respond(tablet-land){
+        padding: 0px;
+    }
+}
+
+::selection {
+    background-color: rgba($color-primary, 0.3);
+}
