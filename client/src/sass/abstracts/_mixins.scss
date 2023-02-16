@@ -29,7 +29,7 @@
         // hasta 1200px 
         @media only screen and (max-width: 75em){@content};
     }
-    @if $breakpoint == desktop {
+    @if $breakpoint == large-desktop {
         // desde 1800px
         @media only screen and (min-width: 112.5em){@content};
     }
