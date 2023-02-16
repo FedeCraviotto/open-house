@@ -41,11 +41,11 @@ source venv/Scripts/activate
 pip install -r requirements.txt
 
 3) Create your .env file:
-DB_DATABASE_NAME=open_house
-DB_USERNAME=postgres
-DB_PASSWORD=pass123456
-GOOGLE_PASSWORD=sagicsfwohnbevkd
-GOOGLE_USER=donraviols.practise@gmail.com
+DB_DATABASE_NAME=
+DB_USERNAME=
+DB_PASSWORD=
+GOOGLE_PASSWORD=
+GOOGLE_USER=
 
 4) Set your password, username, and schema (DATABASE_NAME) in the main project settings.py:
 
