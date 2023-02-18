@@ -7,9 +7,9 @@ import PropTypes from "prop-types";
 
 function Navbar({ auth: { isAuthenticated, loading }, logout }) {
   const authLinks = (
-    <a className="navbar__top__auth__link" href="#!" onClick={logout}>
+    <Link className="navbar__top__auth__link" to="/" replace={true} onClick={logout}>
       Logout
-    </a>
+    </Link>
   );
 
   const guestLinks = (

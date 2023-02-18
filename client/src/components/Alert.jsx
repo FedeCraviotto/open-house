@@ -4,10 +4,12 @@ import { connect } from 'react-redux';
 
 // alert.id --> import {v4 as uuid} from uuid // actions/alert.js 
 function Alert({ alerts }){
-    alerts !== null && alerts.length > 0 && alerts.map((alert)=> {
-        return (<div className={`alert alert-${alert.alertType}`} key={alert.id}>
-            {alert.message}
-        </div>)
+    return alerts !== null && alerts.length > 0 && alerts.map((alert)=> {
+        return (
+        <div className={`alert alert--${alert.alertType}`} key={alert.id}>
+            {alert.msg}
+        </div>
+        )
     })
 }
 

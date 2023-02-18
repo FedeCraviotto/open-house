@@ -21,14 +21,14 @@ function SignUp({ setAlert, signup, isAuthenticated }) {
 
   const submitForm = (e) => {
     e.preventDefault();
-    if (password === password2) {
+    if (password !== password2) {
       setAlert("Passwords do not match", "error");
     } else {
       signup({ name, email, password, password2 });
     }
   };
 
-  if (isAuthenticated) return <Navigate to="/redirect" replace={true} />;
+  if (isAuthenticated) return <Navigate to="/" replace={true} />;
 
   return (
     <div className="auth">

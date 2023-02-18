@@ -26,7 +26,7 @@ function Login({ login, isAuthenticated }) {
     login(email, password);
   };
 
-  if (isAuthenticated) return <Navigate to="/redirect" replace={true} />;
+  if (isAuthenticated) return <Navigate to="/" replace={true} />;
 
   return (
     <div className="auth">
