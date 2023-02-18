@@ -37,7 +37,7 @@ function Login({ login, isAuthenticated }) {
         </Helmet>
         <h1 className="auth__title">Login</h1>
         <p className="auth__lead">Sign into your account</p>
-        <form className="auth__form" onSubmit={(e)=>submitForm(e)}>
+        <form className="auth__form" onSubmit={submitForm}>
           <div className="auth__form__group">
             <input
               type="email"
@@ -45,7 +45,7 @@ function Login({ login, isAuthenticated }) {
               name="email"
               placeholder="email"
               value={email}
-              onChange={(e) => changeInputs(e)}
+              onChange={changeInputs}
               required
             />
           </div>
@@ -56,7 +56,7 @@ function Login({ login, isAuthenticated }) {
               placeholder="password"
               name="password"
               value={password}
-              onChange={(e) => changeInputs(e)}
+              onChange={changeInputs}
               minLength="6"
               required
             />

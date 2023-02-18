@@ -39,7 +39,7 @@ function SignUp({ setAlert, signup, isAuthenticated }) {
         </Helmet>
         <h1 className="auth__title">Sign Up</h1>
         <p className="auth__lead">Create your account</p>
-        <form className="auth__form" onSubmit={(e)=>submitForm(e)}>
+        <form className="auth__form" onSubmit={submitForm}>
           <div className="auth__form__group">
             <input
               type="name"
@@ -47,7 +47,7 @@ function SignUp({ setAlert, signup, isAuthenticated }) {
               name="name"
               placeholder="name"
               value={name}
-              onChange={(e) => changeInputs(e)}
+              onChange={changeInputs}
               required
             />
           </div>
@@ -58,8 +58,19 @@ function SignUp({ setAlert, signup, isAuthenticated }) {
               name="email"
               placeholder="email"
               value={email}
-              onChange={(e) => changeInputs(e)}
+              onChange={changeInputs}
               required
+            />
+          </div>
+          <div className="auth__form__group">
+            <input
+              type="password"
+              className="auth__form__input"
+              placeholder="password"
+              name="password"
+              value={password}
+              onChange={changeInputs}
+              minLength="6"
             />
           </div>
           <div className="auth__form__group">
@@ -69,8 +80,7 @@ function SignUp({ setAlert, signup, isAuthenticated }) {
               placeholder="confirm password"
               name="password2"
               value={password2}
-              onChange={(e) => changeInputs(e)}
-              minLength="6"
+              onChange={changeInputs}
             />
           </div>
           <button className="auth__form__button">Register</button>
