@@ -1,16 +1,13 @@
 import React, { useState } from "react";
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-
-function Card(){
+function Card(props){
     return(
-        <HelmetProvider>
-            <Helmet>
-                <title></title>
-                <meta content=""/>
-            </Helmet>
-            <div className="card">Card</div>
-        </HelmetProvider>
+        <div className="card">
+
+        </div>
     )
 }
 export default Card;

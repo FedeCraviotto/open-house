@@ -12,7 +12,7 @@ function ListingForm(props) {
     bathrooms: "0+",
     sqft: "1000+",
     days_listed: "1 or less",
-    has_photos: "1+",
+    has_images: "1+",
     open_house: "false",
     keywords: "",
   });
@@ -25,12 +25,12 @@ function ListingForm(props) {
     sqft,
     home_type,
     keywords,
-    has_photos,
+    has_images,
     days_listed,
     open_house,
   } = formData;
 
-  const { loading, setLoading } = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const updateFormData = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -50,7 +50,7 @@ function ListingForm(props) {
         sqft,
         home_type,
         keywords,
-        has_photos,
+        has_images,
         days_listed,
         open_house,
       })
@@ -80,8 +80,8 @@ function ListingForm(props) {
               onChange={updateFormData}
               value={sale_type}
             >
-              <option value="">For Sale</option>
-              <option value="">For Rent</option>
+              <option>For Sale</option>
+              <option>For Rent</option>
             </select>
           </div>
 
@@ -96,11 +96,11 @@ function ListingForm(props) {
               onChange={updateFormData}
               value={sqft}
             >
-              <option value="">1000+</option>
-              <option value="">1200+</option>
-              <option value="">1500+</option>
-              <option value="">2000+</option>
-              <option value="">Any</option>
+              <option>1000+</option>
+              <option>1200+</option>
+              <option>1500+</option>
+              <option>2000+</option>
+              <option>Any</option>
             </select>
           </div>
         </div>
@@ -117,15 +117,15 @@ function ListingForm(props) {
               onChange={updateFormData}
               value={price}
             >
-              <option value="">$0+</option>
-              <option value="">$200.000+</option>
-              <option value="">$400.000+</option>
-              <option value="">$600.000+</option>
-              <option value="">$800.000+</option>
-              <option value="">$1.000.000+</option>
-              <option value="">$1.200.000+</option>
-              <option value="">$1.500.000+</option>
-              <option value="">Any</option>
+              <option>$0+</option>
+              <option>$200.000+</option>
+              <option>$400.000+</option>
+              <option>$600.000+</option>
+              <option>$800.000+</option>
+              <option>$1.000.000+</option>
+              <option>$1.200.000+</option>
+              <option>$1.500.000+</option>
+              <option>Any</option>
             </select>
           </div>
 
@@ -138,14 +138,14 @@ function ListingForm(props) {
               id="days_listed"
               className="listingform__select"
               onChange={updateFormData}
-              value={days_listed}
+              
             >
-              <option value="">1 or less</option>
-              <option value="">2 or less</option>
-              <option value="">5 or less</option>
-              <option value="">10 or less</option>
-              <option value="">20 or less</option>
-              <option value="">Any</option>
+              <option>1 or less</option>
+              <option>2 or less</option>
+              <option>5 or less</option>
+              <option>10 or less</option>
+              <option>20 or less</option>
+              <option>Any</option>
             </select>
           </div>
         </div>
@@ -162,31 +162,31 @@ function ListingForm(props) {
               onChange={updateFormData}
               value={bedrooms}
             >
-              <option value="">0+</option>
-              <option value="">1+</option>
-              <option value="">2+</option>
-              <option value="">3+</option>
-              <option value="">4+</option>
-              <option value="">5+</option>
+              <option>0+</option>
+              <option>1+</option>
+              <option>2+</option>
+              <option>3+</option>
+              <option>4+</option>
+              <option>5+</option>
             </select>
           </div>
 
           <div className="listingform__section">
-            <label htmlFor="has_photos" className="listingform__label">
+            <label htmlFor="has_images" className="listingform__label">
               Has Photos
             </label>
             <select
-              name="has_photos"
-              id="has_photos"
+              name="has_images"
+              id="has_images"
               className="listingform__select"
               onChange={updateFormData}
-              value={has_photos}
+              value={has_images}
             >
-              <option value="">1+</option>
-              <option value="">3+</option>
-              <option value="">5+</option>
-              <option value="">10+</option>
-              <option value="">15+</option>
+              <option>1+</option>
+              <option>3+</option>
+              <option>5+</option>
+              <option>10+</option>
+              <option>15+</option>
             </select>
           </div>
         </div>
@@ -203,9 +203,9 @@ function ListingForm(props) {
               onChange={updateFormData}
               value={home_type}
             >
-              <option value="">House</option>
-              <option value="">Townhouse</option>
-              <option value="">Condo</option>
+              <option>House</option>
+              <option>Townhouse</option>
+              <option>Condo</option>
             </select>
           </div>
 
@@ -235,11 +235,11 @@ function ListingForm(props) {
               onChange={updateFormData}
               value={bathrooms}
             >
-              <option value="">0+</option>
-              <option value="">1+</option>
-              <option value="">2+</option>
-              <option value="">3+</option>
-              <option value="">4+</option>
+              <option>0+</option>
+              <option>1+</option>
+              <option>2+</option>
+              <option>3+</option>
+              <option>4+</option>
             </select>
           </div>
 
