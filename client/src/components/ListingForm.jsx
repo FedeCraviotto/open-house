@@ -32,13 +32,20 @@ function ListingForm(props) {
 
   const [loading, setLoading] = useState(false);
 
-  const updateFormData = (e) =>
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const updateFormData = (e) => {
+    if (e.target.name === 'open_house') {
+      setFormData({ ...formData, [e.target.name]: (e.target.checked).toString() })
+    } else {
+      setFormData({ ...formData, [e.target.name]: e.target.value })
+    }
+  }
 
   const submitForm = (e) => {
     e.preventDefault();
-    axios.defaults.headers = {
-      "Content-Type": "application/json",
+    const config = {
+      headers: {
+        "Content-Type": "application/json"
+      }
     };
     setLoading(true);
     axios
@@ -46,14 +53,14 @@ function ListingForm(props) {
         sale_type,
         price,
         bedrooms,
+        home_type,
         bathrooms,
         sqft,
-        home_type,
-        keywords,
-        has_images,
         days_listed,
+        has_images,
         open_house,
-      })
+        keywords,
+      }, config)
       .then((res) => {
         setLoading(false);
         props.setListings(res.data);
@@ -173,7 +180,7 @@ function ListingForm(props) {
 
           <div className="listingform__section">
             <label htmlFor="has_images" className="listingform__label">
-              Has Photos
+              Has Images
             </label>
             <select
               name="has_images"

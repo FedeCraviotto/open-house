@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 function Card(props){
     return(
         <div className="card">
-
+            Carddd
         </div>
     )
 }

@@ -22,9 +22,9 @@ class SearchView(APIView):
     serializer_class = ListingSerializer
     
     # Tener en cuenta que con APIView vamos a poder hacer todos los tipos de API requests (patch, put, delete...no solamente post)
-    def post(self, requests, format=None):
+    def post(self, request, format=None):
         # No tiene porque ser queryset necesariamente
-        queryset = Listing.objects.order_by('list_date').filter(is_published=True)
+        queryset = Listing.objects.order_by('-list_date').filter(is_published=True)
         data = self.request.data
         
         sale_type = data['sale_type']
@@ -34,19 +34,19 @@ class SearchView(APIView):
         price = data['price']
         if price == '$0+':
             price = 0
-        elif price == '$200,000+':
+        elif price == '$200.000+':
             price = 200000
-        elif price == '$400,000+':
+        elif price == '$400.000+':
             price = 400000
-        elif price == '$600,000+':
+        elif price == '$600.000+':
             price = 600000
-        elif price == '$800,000+':
+        elif price == '$800.000+':
             price = 800000
-        elif price == '$1,000,000+':
+        elif price == '$1.000.000+':
             price = 1000000
-        elif price == '$1,200,000+':
+        elif price == '$1.200.000+':
             price = 1200000
-        elif price == '$1,500,000+':
+        elif price == '$1.500.000+':
             price = 1500000
         elif price == 'Any':
             price = -1
@@ -176,5 +176,5 @@ class SearchView(APIView):
         
         # para que sea un JSON
         serializer = ListingSerializer(queryset, many=True)
-        print(data)
+        
         return Response(serializer.data)
