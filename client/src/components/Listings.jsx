@@ -20,7 +20,7 @@ function Listings({ listings }) {
           bedrooms={listing.bedrooms}
           bathrooms={listing.bathrooms}
           sqft={listing.sqft}
-          photo_main={listing.photo_main}
+          photo_main={listing.main_image}
           slug={listing.slug}
         />
       );
