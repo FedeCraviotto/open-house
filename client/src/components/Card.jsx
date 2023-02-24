@@ -6,8 +6,6 @@ function Card(props){
     const numberWithCommas = (x) => {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     }
-
-    console.log(props)
     return(
         <div className="card">
             <h3 className="card__title">{props.title}</h3>

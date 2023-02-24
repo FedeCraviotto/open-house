@@ -28,7 +28,7 @@ function Listings({ listings }) {
 
     for (let i = 0; i < listings.length; i += 3) {
       results.push(
-        <div className="row">
+        <div className="row" key={i}>
           <div className="col-1-of-3">{listingsOnPage[i]}</div>
 
           <div className="col-1-of-3">
@@ -46,7 +46,6 @@ function Listings({ listings }) {
   };
   return (
     <div className="listings">
-      Listings here
       {getListings()}
     </div>
   );

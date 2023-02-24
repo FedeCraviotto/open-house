@@ -60,7 +60,7 @@ function Home(){
                             <Pagination
                             itemsPerPage={listingsPerPage}
                             count={listings.length}
-                            visitPAge={visitPage}
+                            visitPage={visitPage}
                             previous={previousNumber}
                             next={nextNumber}
                             active={active}
