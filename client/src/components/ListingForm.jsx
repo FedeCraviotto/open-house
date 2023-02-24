@@ -276,7 +276,7 @@ function ListingForm(props) {
                         /> 
                     </div>
                 ) : (
-                    <button className="listingform__button listingform__button--primary">Save</button>
+                    <button className="listingform__button listingform__button--primary">Get</button>
                 )
             }
         </div>
