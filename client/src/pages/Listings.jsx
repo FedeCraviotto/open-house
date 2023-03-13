@@ -10,6 +10,7 @@ function Listings(){
     const [previous, setPrevious] = useState('');
     const [next, setNext] = useState('');
     const [active, setActive] = useState(1);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(()=> {
         window.scrollTo(0, 0);
@@ -21,7 +22,7 @@ function Listings(){
                 setCount(response.data.count);
                 setPrevious(response.data.previous);
                 setNext(response.data.next);
-                
+                setIsLoading(false)
             } catch (err) {
                 console.log(err);
             }
@@ -113,6 +114,8 @@ function Listings(){
         })
     }
 
+    if(isLoading) return 'Loading'
+    else 
     return(
         <HelmetProvider>
         <main className="listings">
