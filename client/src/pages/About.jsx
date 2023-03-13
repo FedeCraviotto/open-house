@@ -111,7 +111,7 @@ const About = () => {
           <meta name="description" content="About us" />
         </Helmet>
         <header className="about__header">
-          <h1 className="about__heading">About Realest Estate</h1>
+          <h1 className="about__heading">About Us</h1>
         </header>
         <section className="about__info">
           <div className="row">
